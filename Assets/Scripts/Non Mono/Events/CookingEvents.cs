@@ -1,18 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class CookingEvents : MonoBehaviour
+public static class CookingEvents 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static Action<IngredientStationController> OnIngredientStationSelected;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

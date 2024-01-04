@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9253636bf2648bd813257f451f8486, type: 3}
-  m_Name: SelectedAndHighlighted
+  m_Name: Highlight Plus Profile
   m_EditorClassIdentifier: 
-  effectGroup: 1
+  effectGroup: 0
   effectGroupLayer:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -28,7 +28,7 @@ MonoBehaviour:
   cameraDistanceFadeNear: 0
   cameraDistanceFadeFar: 1000
   constantWidth: 1
-  overlay: 1
+  overlay: 0
   overlayMode: 0
   overlayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   overlayAnimationSpeed: 1
@@ -74,18 +74,18 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   outlineGradientInLocalSpace: 0
   outlineBlurPasses: 2
-  outlineWidth: 0.41
-  outlineQuality: 0
+  outlineWidth: 0.45
+  outlineQuality: 3
   outlineEdgeMode: 0
   outlineEdgeThreshold: 0.995
   outlineSharpness: 1
-  outlineDownsampling: 2
+  outlineDownsampling: 1
   outlineOptimalBlit: 1
   outlineContourStyle: 0
   outlineVisibility: 0
   outlineIndependent: 0
-  glow: 1
-  glowWidth: 0.5
+  glow: 0
+  glowWidth: 0.4
   glowQuality: 3
   glowBlurMethod: 0
   glowDownsampling: 2
@@ -95,7 +95,7 @@ MonoBehaviour:
   glowMagicNumber1: 0.75
   glowMagicNumber2: 0.5
   glowAnimationSpeed: 1
-  glowVisibility: 1
+  glowVisibility: 0
   glowBlendMode: 0
   glowBlendPasses: 1
   glowPasses:
@@ -109,7 +109,7 @@ MonoBehaviour:
     alpha: 0.3
     color: {r: 0.64, g: 1, b: 0, a: 1}
   - offset: 1
-    alpha: 0.25
+    alpha: 0.4
     color: {r: 0.64, g: 1, b: 0, a: 1}
   glowIgnoreMask: 0
   innerGlow: 0
@@ -123,9 +123,9 @@ MonoBehaviour:
   targetFXRotationSpeed: 50
   targetFXInitialScale: 4
   targetFXEndScale: 1.5
-  targetFXScaleToRenderBounds: 0
+  targetFXScaleToRenderBounds: 1
   targetFXAlignToGround: 0
-  targetFXGroundMaxDistance: 15
+  targetFXGroundMaxDistance: 10
   targetFXGroundLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -138,7 +138,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   seeThroughOccluderMaskAccurate: 0
-  seeThroughOccluderThreshold: 0.4
+  seeThroughOccluderThreshold: 0.3
   seeThroughOccluderCheckInterval: 1
   seeThroughOccluderCheckIndividualObjects: 0
   seeThroughDepthOffset: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   seeThroughBorderColor: {r: 0, g: 0, b: 0, a: 1}
   seeThroughBorderWidth: 0.45
   seeThroughBorderOnly: 0
-  seeThroughOrdered: 1
+  seeThroughOrdered: 0
   seeThroughTexture: {fileID: 0}
   seeThroughTextureUVSpace: 0
   seeThroughTextureScale: 1
