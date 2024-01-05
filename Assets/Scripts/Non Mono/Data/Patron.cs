@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Cooking;
 
-public class Patron : MonoBehaviour
+namespace Patrons
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public class Patron
+	{
+		public Recipe RequiredRecipe;
+		public PatronType PatronType;
+	}
 }

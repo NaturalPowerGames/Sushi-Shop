@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class IngredientsData : MonoBehaviour
+namespace Cooking
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	[CreateAssetMenu]
+	public class IngredientsData : ScriptableObject
+	{
+		[EnumNamedArray(typeof(IngredientType))]
+		public IngredientController[] Ingredients;
+	}
 }

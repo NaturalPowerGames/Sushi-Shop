@@ -1,9 +1,11 @@
+using Cooking;
 using System;
 using UnityEngine;
 
 public class IngredientStationManager : MonoBehaviour
 {
 	private IngredientStationController selectedStation;
+	private IngredientsData ingredientsData;
 
 	private void OnEnable()
 	{
