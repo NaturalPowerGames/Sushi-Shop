@@ -8,6 +8,8 @@ public class IngredientStationController : MonoBehaviour, IPointerEnterHandler, 
 {
 	[SerializeField]
 	private IngredientController ingredientPrefab;
+	[SerializeField]
+	private Transform pickupLocation;
 
 	public void GenerateAndGiveIngredientToPlayer()
 	{

@@ -1,40 +1,44 @@
 using UnityEngine;
+using Cooking;
 
-public class PatronController : MonoBehaviour
+namespace Patrons
 {
-	private MovementController movement;
-	public Transform chairTarget;
-	private CharacterAnimationHook animationHook;
-
-	private void Awake()
+	public class PatronController : MonoBehaviour
 	{
-		movement = GetComponent<MovementController>();
-		//create animation hook
-	}
+		private MovementController movement;
+		public Transform chairTarget;
+		private CharacterAnimationHook animationHook;
 
-	private void Start()
-	{
-		OnPatronSitRequested(chairTarget.transform.position);
-	}
+		private void Awake()
+		{
+			movement = GetComponent<MovementController>();
+			//create animation hook
+		}
 
-	private void OnEnable()
-	{
-		PatronEvents.OnPatronSitRequested += OnPatronSitRequested;
-	}
+		private void Start()
+		{
+			OnPatronSitRequested(chairTarget.transform.position);
+		}
 
-	private void OnDisable()
-	{
-		PatronEvents.OnPatronSitRequested -= OnPatronSitRequested;
-	}
+		private void OnEnable()
+		{
+			PatronEvents.OnPatronSitRequested += OnPatronSitRequested;
+		}
 
-	private void OnPatronSitRequested(Vector3 chairLocation)
-	{
-		movement.MoveTo(chairLocation, () => OnChairLocationReached());
-	}
+		private void OnDisable()
+		{
+			PatronEvents.OnPatronSitRequested -= OnPatronSitRequested;
+		}
 
-	private void OnChairLocationReached()
-	{
-		//do the sitting animation and rotate correctly
-		Debug.Log("Reached location :X");
+		private void OnPatronSitRequested(Vector3 chairLocation)
+		{
+			movement.MoveTo(chairLocation, () => OnChairLocationReached());
+		}
+
+		private void OnChairLocationReached()
+		{
+			//do the sitting animation and rotate correctly
+			Debug.Log("Reached location :X");
+		}
 	}
 }

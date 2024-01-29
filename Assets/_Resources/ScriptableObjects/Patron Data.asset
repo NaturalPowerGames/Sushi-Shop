@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94a3f951b45fb0940923877d6f043879, type: 3}
   m_Name: Patron Data
   m_EditorClassIdentifier: 
-  Patrons: []
+  Patrons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -12,3 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a74fee87bb9f84caeb8e9444086916, type: 3}
   m_Name: RecipeData
   m_EditorClassIdentifier: 
+  Recipes:
+  - Name: Salmon Roll
+    ingredients: 060000000500000007000000
+    Reward: 50
+  - Name: Fish Salad
+    ingredients: 000000000200000004000000
+    Reward: 50
+  - Name: Crab Roll
+    ingredients: 010000000500000006000000
+    Reward: 100
+  - Name: Ebi Roll
+    ingredients: 030000000500000006000000
+    Reward: 100
