@@ -1,18 +1,46 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PatronManager : MonoBehaviour
+namespace Patrons
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public class PatronManager : MonoBehaviour
+	{
+		[SerializeField]
+		private Transform entryPoint;
+		[SerializeField]
+		private PatronData patronData;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+		private void Start()
+		{
+			StartCoroutine(SummonPatronsWithWaitInBetween());
+			OnPatronRequested();
+		}
+
+		private IEnumerator SummonPatronsWithWaitInBetween()
+		{
+			while (true)
+			{
+				yield return new WaitForSeconds(15);
+				OnPatronRequested();
+			}
+		}
+
+		private void OnEnable()
+		{
+			PatronEvents.OnPatronRequested += OnPatronRequested;
+		}
+
+		private void OnDisable()
+		{
+			PatronEvents.OnPatronRequested -= OnPatronRequested;
+		}
+
+		private void OnPatronRequested()
+		{
+			PatronController patron = Instantiate(patronData.GetRandomPatron());
+			patron.transform.position = entryPoint.position;
+			PatronEvents.OnPatronEntered?.Invoke(patron);
+		}
+	}
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-
+using System;
 namespace Cooking
 {
 	public class RecipeDisplayController : MonoBehaviour
@@ -12,12 +12,12 @@ namespace Cooking
 		{
 			this.recipeName.text = recipe.Name;
 			this.reward.text = recipe.Reward.ToString();
-			string ingredientsOneLine = "";
+			string ingredientsParsed = "";
 			foreach (IngredientType ingredient in recipe.ingredients)
 			{
-				ingredientsOneLine += $"{ingredient}";
+				ingredientsParsed += $"{ingredient}{Environment.NewLine}";
 			}
-			this.ingredients.text = ingredientsOneLine;
+			this.ingredients.text = ingredientsParsed;
 		}
 	}
 }

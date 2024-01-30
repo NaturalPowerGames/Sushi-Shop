@@ -15,11 +15,6 @@ namespace Patrons
 			//create animation hook
 		}
 
-		private void Start()
-		{
-			OnPatronSitRequested(chairTarget.transform.position);
-		}
-
 		private void OnEnable()
 		{
 			PatronEvents.OnPatronSitRequested += OnPatronSitRequested;
@@ -30,15 +25,17 @@ namespace Patrons
 			PatronEvents.OnPatronSitRequested -= OnPatronSitRequested;
 		}
 
-		private void OnPatronSitRequested(Vector3 chairLocation)
+		private void OnPatronSitRequested(Transform chair)
 		{
-			movement.MoveTo(chairLocation, () => OnChairLocationReached());
+			movement.MoveTo(chair.position, () => OnChairLocationReached());
 		}
 
 		private void OnChairLocationReached()
 		{
 			//do the sitting animation and rotate correctly
 			Debug.Log("Reached location :X");
+			//do the sitting animation and rotate correctly (rotate where?)
+			PatronEvents.OnPatronSat?.Invoke(this);
 		}
 	}
 }

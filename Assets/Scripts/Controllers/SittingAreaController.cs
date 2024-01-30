@@ -1,18 +1,31 @@
+using Patrons;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SittingAreaController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField]
+	private Transform[] chairs;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void OnEnable()
+	{
+		PatronEvents.OnPatronEntered += OnPatronEntered;
+	}
+
+	private void OnDisable()
+	{
+		PatronEvents.OnPatronEntered -= OnPatronEntered;
+	}
+
+	private void OnPatronEntered(PatronController obj)
+	{
+		PatronEvents.OnPatronSitRequested?.Invoke(RandomNotOccupiedChair());
+	}
+
+	private Transform RandomNotOccupiedChair()
+	{
+		return chairs[0];
+	}
 }
